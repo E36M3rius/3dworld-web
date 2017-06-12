@@ -15,8 +15,8 @@ class HomeController extends Controller {
         // do the php
        
         // render the views - includes for now
-        include_once(__DIR__."/../../../resources/views/common/header.phtml");
-        include_once(__DIR__."/../../../resources/views/pages/home.phtml");
-        include_once(__DIR__."/../../../resources/views/common/footer.phtml");
+        include(__DIR__."/../../../resources/views/common/header.phtml");
+        include(__DIR__."/../../../resources/views/pages/home.phtml");
+        include(__DIR__."/../../../resources/views/common/footer.phtml");
     }
 }
