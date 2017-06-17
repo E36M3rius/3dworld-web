@@ -12,3 +12,4 @@
 */
 
 $app->get('/', 'HomeController@renderWeb');
+$app->post('/', 'HomeController@post');
