@@ -18,14 +18,14 @@
 namespace App\Http\Controllers;
 
 class HomeController extends Controller {
-    public $cacheVersionStatic = md5(mt_rand(time()));
+    public $cacheVersionStatic;
 
     /**
      * Create new instance of controller.
      */
     public function __construct()
     {
-
+      $this->cacheVersionStatic = time();
     }
 
     public function renderWeb()
