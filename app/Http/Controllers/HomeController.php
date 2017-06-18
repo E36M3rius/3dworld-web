@@ -18,45 +18,47 @@
 namespace App\Http\Controllers;
 
 class HomeController extends Controller {
-    
+    public $cacheVersionStatic = md5(mt_rand(time()));
+
     /**
      * Create new instance of controller.
      */
-    public function __construct() 
+    public function __construct()
     {
-        
+
     }
-    
-    public function renderWeb() 
+
+    public function renderWeb()
     {
         // do the php
         $pageData = array();
-        
+
         $pageData['route'] = htmlspecialchars(isset($_GET['REQUEST_URI']) ? $_GET['REQUEST_URI'] : '/');
-        
+        $pageData['cache_version_static'] = $this->cacheVersionStatic;
+
         // render the views - includes for now
         include(__DIR__."/../../../resources/views/common/header.phtml");
         include(__DIR__."/../../../resources/views/pages/home.phtml");
         include(__DIR__."/../../../resources/views/common/footer.phtml");
     }
-    
+
     public function post()
     {
         // check if we want to send mail
-        
+
         $this->sendMail();
     }
-    
-    private function sendMail() 
+
+    private function sendMail()
     {
         if (empty($_POST)) {
             return null;
         }
-        
+
         $postData = array_map(function($item) {
             return htmlspecialchars($item);
         }, $_POST);
-        
+
         // done, send home
         header('Location: /');
     }
