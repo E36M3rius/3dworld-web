@@ -52,7 +52,7 @@ class HomeController extends Controller {
         if (empty($_POST)) {
             return null;
         }
-       
+        
         $postData = array_map(function($item) {
             return htmlspecialchars($item);
         }, $_POST);
