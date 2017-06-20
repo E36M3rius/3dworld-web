@@ -35,6 +35,7 @@ class HomeController extends Controller {
 
         $pageData['route'] = htmlspecialchars(isset($_GET['REQUEST_URI']) ? $_GET['REQUEST_URI'] : '/');
         $pageData['cache_version_static'] = $this->cacheVersionStatic;
+        $pageData['gallery_image_urls'] = $this->generateGalleryImageUrls();
 
         // render the views - includes for now
         include(__DIR__."/../../../resources/views/common/header.phtml");
@@ -61,5 +62,17 @@ class HomeController extends Controller {
 
         // done, send home
         header('Location: /');
+    }
+
+    private function generateGalleryImageUrls($howMany = null)
+    {
+      $amount = $howMany !== null ? $howMany : 61;
+
+      $images = [];
+      for($i=1; $i < $amount; $i++) {
+        $images[] = sprintf("/images/gallery/%04d.jpg", $i);
+      }
+
+      return $images;
     }
 }

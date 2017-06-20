@@ -28,7 +28,8 @@
                                                         <li ><a style="color:black" href="/#3d-walls">3D Walls</a></li>
                                                         <li ><a style="color:black" href="/#3d-ceiling">3D Ceiling</a></li>
                                                         <li ><a style="color:black" href="/#gallery">Gallery</a></li>
-                                                        <li ><a style="color:black" href="/#contact-us">Contact Us</a></li>				</ul>
+                                                        <li ><a style="color:black" href="/#contact-us">Contact Us</a></li>
+																															</ul>
 						<ul class="icons">
 							<!-- <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li> -->
 							<li><a href="https://www.facebook.com/3dflooringmontreal/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
@@ -72,7 +73,7 @@
 									<h1>3D Flooring</h1>
 
 								</header>
-								<a href="#" class="image main"><img src="images/gallery/showcase1.jpg?cache=6" alt="3d Flooring"/></a>
+								<a href="#" class="image main"><img src="images/gallery/showcase1.jpg?cache=7" alt="3d Flooring"/></a>
 								<p>Have you ever imagined having a beach right in your leaving room? With the new technology of 3D floor designs, you can make it happen. You can bring sea waves, dolphins and corals, green lawns and flowers into your interior design that will transform your room into a place you dream of.
 
 3D floor designs are the most innovative designs. In the base of these floors attractive 3D images that are covered with a liquid polymer material. Due to their low level of viscosity, floors create a smooth layer by themselves. That is why they are also called “self-levelling” polymer floors.
@@ -106,7 +107,7 @@ Advantages:
 									<header>
 										<h1>3d Walls</h1>
 									</header>
-									<a href="#" class="image fit"><img src="images/gallery/showcase4.jpg" style="object-fit: cover" alt="3d Walls" height="409px" /></a>
+									<a href="#" class="image fit"><img src="images/gallery/0032.jpg" style="object-fit: cover" alt="3d Walls" height="409px" /></a>
 									<p>True taster of comfort and beauty, stylish and fashionable, follow all the design innovations, because the house - this is the place where you want to come back to after a hard day, to relax and unwind. In our days so freshen the field of innovation interior is a decorative wall design - loading panels that help you get rid of a closed pressing sensation in the apartment due illusions "live" wall.
 Most traditional materials for walls cannot compete with 3d walls that are able to create amazingly realistic figure and visual expand the space, filling it with unique color and mood.
 Diversity of colors and patterns, a huge selection design options in establishing such original decorations in the interior as 3d wall, create spectacular "highlight", perfectly fit into the living room, bedroom, children's room, and bathroom, give a unique style in offices, restaurants, clubs and so on. A unique images, there is often a one-off, will be a way to impress your guests.
@@ -192,6 +193,22 @@ Polymer floorings have been exposed to extreme weather conditions without abolis
 										<li style="display:none"><a href="#" class="button">Full Story</a></li>
 									</ul>
                                                                 </article>
+																																<div id="gallery">
+																																	<header>
+																																	<h1>Gallery</h1>
+																																	</header>
+																																	<section class="posts">
+
+																																<!-- Posts -->
+																																			<?php
+																																			if (!empty($pageData['gallery_image_urls'])) {
+																																				foreach($pageData['gallery_image_urls'] as $imgurl) {
+																																					echo "<article><img src='$imgurl' width='400px' height='300px'/></article>\n";
+																																				}
+																																			}
+																																			?>
+																														</section>
+																															</div>
 
 						<!-- Footer -->
 							<footer>
