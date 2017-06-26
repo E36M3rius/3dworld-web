@@ -2,14 +2,6 @@
 /*
  * TODO:
  *
-
-#2 For Galleries, add a text mentioning that they are samples under the main header title
-"Here's some samples for you to be inspired"
-
-
-#4 create the home page
-
-
 #6 setup the mail
 
 #8 background check with chrome / firefox when in full screen BG goes dark
