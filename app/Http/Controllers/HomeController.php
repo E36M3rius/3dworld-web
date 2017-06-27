@@ -58,7 +58,7 @@ class HomeController extends Controller {
         header('Location: /');
     }
 
-    private function generateGalleryImageUrls($howMany = null, , $slice = 6, $randomize= true)
+    private function generateGalleryImageUrls($howMany = null, $slice = 6, $randomize= true)
     {
       $amount = $howMany !== null ? $howMany : 61;
 
@@ -71,7 +71,7 @@ class HomeController extends Controller {
       if ($randomize) {
         shuffle($images);
       }
-      
+
       if ($slice) {
         $images = array_slice($images, 0, $slice, true);
       }
