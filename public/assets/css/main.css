@@ -3778,7 +3778,7 @@
 
 			#main > .posts > article {
 				border-color: #eeeeee;
-				border-left-width: 2px;
+				border-left-width: 0px;
 				border-style: solid;
 				border-top-width: 2px;
 				text-align: center;
@@ -3786,7 +3786,7 @@
 
 			#gallery > .posts > article {
 				border-color: #eeeeee;
-				border-left-width: 2px;
+				border-left-width: 0px;
 				border-style: solid;
 				border-top-width: 2px;
 				text-align: center;

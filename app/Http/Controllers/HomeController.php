@@ -52,6 +52,8 @@ class HomeController extends Controller {
             return htmlspecialchars($item);
         }, $_POST);
 
+        mail('mb.iordache@gmail.com', 'test', 'testbody');
+
         // done, send home
         header('Location: /');
     }
