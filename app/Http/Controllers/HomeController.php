@@ -58,13 +58,22 @@ class HomeController extends Controller {
         header('Location: /');
     }
 
-    private function generateGalleryImageUrls($howMany = null)
+    private function generateGalleryImageUrls($howMany = null, , $slice = 6, $randomize= true)
     {
       $amount = $howMany !== null ? $howMany : 61;
 
       $images = [];
       for($i=1; $i < $amount; $i++) {
         $images[] = sprintf("/images/gallery/%04d.jpg", $i);
+      }
+
+      // randomize and slice for now
+      if ($randomize) {
+        shuffle($images);
+      }
+      
+      if ($slice) {
+        $images = array_slice($images, 0, $slice, true);
       }
 
       return $images;
