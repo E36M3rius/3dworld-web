@@ -2,10 +2,7 @@
 /*
  * TODO:
  *
-#6 setup the mail
-
-#8 background check with chrome / firefox when in full screen BG goes dark
-
+#6 setup the mail - doesn't work on digitalocean
  */
 namespace App\Http\Controllers;
 
@@ -52,7 +49,7 @@ class HomeController extends Controller {
             return htmlspecialchars($item);
         }, $_POST);
 
-        mail('mb.iordache@gmail.com', 'test', 'testbody');
+        #mail('mb.iordache@gmail.com', 'test', 'testbody');
 
         // done, send home
         header('Location: /');
