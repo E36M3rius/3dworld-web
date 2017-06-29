@@ -20,7 +20,7 @@
 					</header>
 
 				<!-- Nav -->
-					<nav id="nav">
+					<nav id="nav" >
 						<ul class="links">
 							<li class="active"><a href="/#home">Home</a></li>
                                                         <li ><a style="color:black" href="/static/3D-Floors-Presentation.pptx">Demo</a></li>
@@ -193,24 +193,9 @@ Polymer floorings have been exposed to extreme weather conditions without abolis
 										<li style="display:none"><a href="#" class="button">Full Story</a></li>
 									</ul>
                                                                 </article>
-																																<div id="gallery">
-																																	<header>
-																																	<h1>Gallery</h1>
-																																	<p>Some pictures to inspire you ...</p>
-																																	</header>
-
-																																	<section class="posts">
-
-																																<!-- Posts -->
-																																			<?php
-																																			if (!empty($pageData['gallery_image_urls'])) {
-																																				foreach($pageData['gallery_image_urls'] as $imgurl) {
-																																					echo "<article><img src='$imgurl' width='400px' height='300px'/></article>\n";
-																																				}
-																																			}
-																																			?>
-																														</section>
-																															</div>
+																																<?php
+																																include(__DIR__."/gallery.phtml");
+																																 ?>
 
 						<!-- Footer -->
 							<footer>
@@ -250,7 +235,7 @@ Polymer floorings have been exposed to extreme weather conditions without abolis
 									<textarea name="message" id="message" rows="3"></textarea>
 								</div>-->
 								<ul class="actions">
-									<li style="margin-top: 220px; margin-left: 130px"><input type="submit" value="Click To Email Us" /></li>
+									<li style="margin-top: 220px; margin-left: 30%"><input type="submit" value="Click To Email Us" /></li>
 								</ul>
 							</form>
 						</section>
@@ -297,6 +282,6 @@ Polymer floorings have been exposed to extreme weather conditions without abolis
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="assets/js/main.js<?="?".$pageData['cache_version_static']?>"></script>
 
 	</body>

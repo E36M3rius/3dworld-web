@@ -264,5 +264,16 @@
 			}
 
 	});
+	
+$( "#viewgallery1" ).click(function() {
+	$.ajax({
+  method: "GET",
+  url: "/xhr/gallery",
+  data: { }
+}).done(function( msg ) {
+    $( "#gallery" ).html(msg);
+		$( "#viewgallery" ).hide();
+  });
+});
 
 })(jQuery);

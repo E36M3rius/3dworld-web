@@ -13,3 +13,4 @@
 
 $app->get('/', 'HomeController@renderWeb');
 $app->post('/', 'HomeController@post');
+#$app->post('/xhr/gallery', 'XhrController@renderAllGalleries');

@@ -5,6 +5,7 @@
 #6 setup the mail - doesn't work on digitalocean
  */
 namespace App\Http\Controllers;
+use App\Gallery as Gallery;
 
 class HomeController extends Controller {
     public $cacheVersionStatic;
@@ -24,7 +25,7 @@ class HomeController extends Controller {
 
         $pageData['route'] = htmlspecialchars(isset($_GET['REQUEST_URI']) ? $_GET['REQUEST_URI'] : '/');
         $pageData['cache_version_static'] = $this->cacheVersionStatic;
-        $pageData['gallery_image_urls'] = $this->generateGalleryImageUrls();
+        $pageData['gallery_image_urls'] = $this->generateGalleryImageUrls(null, 20, true);
 
         // render the views - includes for now
         include(__DIR__."/../../../resources/views/common/header.phtml");
@@ -55,24 +56,11 @@ class HomeController extends Controller {
         header('Location: /');
     }
 
-    private function generateGalleryImageUrls($howMany = null, $slice = 6, $randomize= true)
+    private function generateGalleryImageUrls($howMany = null, $slice = 6, $randomize = true)
     {
-      $amount = $howMany !== null ? $howMany : 61;
-
-      $images = [];
-      for($i=1; $i < $amount; $i++) {
-        $images[] = sprintf("/images/gallery/%04d.jpg", $i);
-      }
-
-      // randomize and slice for now
-      if ($randomize) {
-        shuffle($images);
-      }
-
-      if ($slice) {
-        $images = array_slice($images, 0, $slice, true);
-      }
-
-      return $images;
+      $gallery = new Gallery();
+      return $gallery->generateGalleryImages($howMany, $slice, $randomize);
     }
+
+
 }

@@ -1,0 +1,18 @@
+<div id="gallery">
+  <header>
+  <h1>Gallery</h1>
+  <p>Some pictures to inspire you ...</p>
+  </header>
+
+  <section class="posts">
+
+<!-- Posts -->
+      <?php
+      if (!empty($pageData['gallery_image_urls'])) {
+        foreach($pageData['gallery_image_urls'] as $imgurl) {
+          echo "<article><img src='$imgurl' width='400px' height='300px'/></article>\n";
+        }
+      }
+      ?>
+</section>
+</div>
