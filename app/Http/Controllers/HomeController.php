@@ -25,7 +25,7 @@ class HomeController extends Controller {
 
         $pageData['route'] = htmlspecialchars(isset($_GET['REQUEST_URI']) ? $_GET['REQUEST_URI'] : '/');
         $pageData['cache_version_static'] = $this->cacheVersionStatic;
-        $pageData['gallery_image_urls'] = $this->generateGalleryImageUrls(null, 20, true);
+        $pageData['gallery_image_urls'] = $this->generateGalleryImageUrls(null, 61, false);
 
         // render the views - includes for now
         include(__DIR__."/../../../resources/views/common/header.phtml");
